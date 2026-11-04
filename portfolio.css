@@ -1,0 +1,62 @@
+/* Global Base Styles */
+body {
+    background-color: #090a0f;
+    color: #f3f4f6;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+/* 3D Perspective and Interactive Door Effects */
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+.door-container {
+    perspective: 1200px;
+}
+
+.door {
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: left center;
+}
+
+.door-container:hover .door-open-hover {
+    transform: rotateY(-35deg);
+}
+
+.door-opened {
+    transform: rotateY(-110deg) !important;
+}
+
+/* Category Glow Effects */
+.glow-blue { 
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.35); 
+}
+.glow-purple { 
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.35); 
+}
+.glow-yellow { 
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.35); 
+}
+.glow-green { 
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.35); 
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #090a0f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #222634;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3b82f6;
+}

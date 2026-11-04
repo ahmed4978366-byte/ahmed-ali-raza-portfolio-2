@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Ali Raza - Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#090a0f',
+                        cardBg: '#12141c',
+                        cardBorder: '#222634',
+                        accentBlue: '#3b82f6',
+                        accentPurple: '#8b5cf6',
+                        accentGreen: '#10b981',
+                        accentYellow: '#f59e0b',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="portfolio.css">
+    <script src="portfolio.js"></script>
+</head>
+<body class="bg-[#090a0f] text-gray-100 antialiased relative min-h-screen">
+
+    <!-- Top Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#090a0f]/80 backdrop-blur-md border-b border-cardBorder/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <a href="#home" class="text-xl font-bold font-heading tracking-wider text-white hover:text-blue-400 transition">
+                    AHMED<span class="text-blue-500">.</span>
+                </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-6 text-sm font-medium text-gray-300">
+                <a href="#home" class="hover:text-blue-400 transition py-1">Home</a>
+                <a href="#doors" class="hover:text-blue-400 transition py-1">Web Development</a>
+                <a href="#doors" class="hover:text-blue-400 transition py-1">App Development</a>
+                <a href="#doors" class="hover:text-blue-400 transition py-1">UI/UX Design</a>
+                <a href="#doors" class="hover:text-blue-400 transition py-1">Graphic Design</a>
+                <a href="#timeline" class="hover:text-blue-400 transition py-1">My Story</a>
+                <a href="#contact" class="hover:text-blue-400 transition py-1">Contact</a>
+            </nav>
+
+            <!-- Time & Location -->
+            <div class="hidden lg:flex items-center space-x-4 text-xs text-gray-400 bg-cardBg/80 px-3 py-1.5 rounded-full border border-cardBorder">
+                <span class="flex items-center space-x-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Location: Global</span>
+                </span>
+                <span class="text-gray-600">|</span>
+                <span id="live-time" class="font-mono text-gray-300">10:30 AM EST</span>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cardBg border-b border-cardBorder px-6 py-4 space-y-3">
+            <a href="#home" class="block text-gray-300 hover:text-blue-400 py-1">Home</a>
+            <a href="#doors" class="block text-gray-300 hover:text-blue-400 py-1">Work Categories</a>
+            <a href="#timeline" class="block text-gray-300 hover:text-blue-400 py-1">My Story</a>
+            <a href="#contact" class="block text-gray-300 hover:text-blue-400 py-1">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="pt-16">
+
+        <!-- HERO SECTION -->
+        <section id="home" class="min-h-[calc(100vh-4rem)] flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center my-auto pt-8">
+                
+                <!-- Left Hero Text -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                        Independent Freelancer
+                    </div>
+
+                    <div class="space-y-2">
+                        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight font-heading leading-tight">
+                            Hi, I'm Ahmed.<br/>
+                            <span class="text-gray-400">I am a </span><br/>
+                            <span id="typewriter" class="text-blue-500 border-b-4 border-blue-500 pb-1 inline-block min-h-[1.2em]">UI/UX Designer</span>
+                        </h1>
+                    </div>
+
+                    <p class="text-gray-400 text-lg max-w-xl leading-relaxed">
+                        Crafting high-converting digital products, interactive web experiences, and seamless user interfaces with passion and precision.
+                    </p>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#contact" class="px-7 py-3.5 rounded-full bg-white text-black font-bold text-sm hover:bg-gray-200 transition-all transform hover:-translate-y-0.5 shadow-lg flex items-center gap-2">
+                            <span>Start a project</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#doors" class="px-7 py-3.5 rounded-full bg-cardBg border border-cardBorder text-white font-semibold text-sm hover:bg-cardBorder transition-all flex items-center gap-2">
+                            <i class="fa-regular fa-eye text-gray-400"></i>
+                            <span>See my work</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Hero Utility Card / Photo -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative group cursor-pointer max-w-xs sm:max-w-sm w-full">
+                        <div class="bg-cardBg border border-cardBorder p-4 rounded-2xl shadow-2xl transform rotate-3 group-hover:rotate-0 transition-all duration-500 relative z-10 hover:shadow-blue-500/10">
+                            
+                            <!-- Profile Photo Card -->
+                            <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-gray-800 border border-cardBorder/50">
+                                <img id="profile-img" src="awan.jpg.jpeg" alt="Ahmed Ali Raza" onerror="this.src='https://placehold.co/400x500/1e293b/ffffff?text=Ahmed+Ali+Raza'" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                                
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+                                
+                                <div class="absolute bottom-3 left-3 right-3 text-xs text-gray-300 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 flex justify-between items-center">
+                                    <span>Creative Specialist</span>
+                                    <span class="text-emerald-400">● Online</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-bold text-white text-sm">Ahmed Ali Raza</h3>
+                                    <p class="text-xs text-gray-400">Designer & Developer</p>
+                                </div>
+                                <span class="bg-blue-500/10 text-blue-400 border border-blue-500/20 text-[10px] font-mono px-2.5 py-1 rounded-full uppercase">My utility card</span>
+                            </div>
+                        </div>
+
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl filter blur-2xl opacity-20 group-hover:opacity-40 transition duration-500"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Hero Marquee Banner -->
+            <div class="w-full border-y border-cardBorder/60 py-3 mt-12 overflow-hidden bg-cardBg/30">
+                <div class="flex whitespace-nowrap animate-marquee space-x-8 text-xs font-semibold uppercase tracking-widest text-gray-400">
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-circle text-[6px] text-emerald-500"></i> AVAILABLE FOR WORK</span>
+                    <span class="text-gray-600">•</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-globe text-blue-400"></i> REMOTE WORK WORLDWIDE</span>
+                    <span class="text-gray-600">•</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-bolt text-yellow-400"></i> UI/UX DESIGN & FULL STACK</span>
+                    <span class="text-gray-600">•</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-circle text-[6px] text-emerald-500"></i> AVAILABLE FOR WORK</span>
+                    <span class="text-gray-600">•</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-globe text-blue-400"></i> REMOTE WORK WORLDWIDE</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- INTERACTIVE DOORS SECTION -->
+        <section id="doors" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-cardBorder/40">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="text-3xl sm:text-5xl font-extrabold font-heading text-white">
+                    Magic happens behind the doors
+                </h2>
+                <p class="text-gray-400 max-w-xl mx-auto text-sm sm:text-base">
+                    Click any door below to step inside and explore my curated portfolio projects in each specialty.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Door 1: Web Development -->
+                <div class="door-card group relative bg-cardBg border border-cardBorder rounded-2xl p-6 text-center flex flex-col items-center justify-between min-h-[380px] overflow-hidden hover:border-blue-500/50 transition duration-300">
+                    <div class="w-full">
+                        <span class="text-xs font-mono text-blue-400 uppercase tracking-widest block mb-1">01 / CATEGORY</span>
+                        <h3 class="text-xl font-bold font-heading text-white">Web Development</h3>
+                    </div>
+
+                    <div class="door-container relative w-36 h-52 my-6 cursor-pointer" onclick="openDoorCategory('web')">
+                        <div class="absolute inset-0 bg-blue-950/80 rounded-t-xl border border-blue-500/40 flex flex-col items-center justify-center p-3 text-center glow-blue">
+                            <i class="fa-solid fa-code text-3xl text-blue-400 mb-2"></i>
+                            <span class="text-[11px] font-bold text-white uppercase tracking-wider">Explore Web</span>
+                            <span class="text-[9px] text-blue-300 mt-1">Full Stack Apps</span>
+                        </div>
+                        <div class="door door-open-hover absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-900 rounded-t-xl border-2 border-blue-400 shadow-xl flex flex-col justify-between p-3">
+                            <div class="border border-blue-400/30 h-full rounded-t-lg p-2 flex flex-col justify-between">
+                                <div class="w-full text-right">
+                                    <div class="w-3 h-3 rounded-full bg-yellow-400 ml-auto shadow-md"></div>
+                                </div>
+                                <span class="text-[10px] font-mono text-blue-200 tracking-tighter text-left">WEB DEV</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full text-xs text-gray-400 bg-cardBorder/40 py-2 px-3 rounded-xl border border-cardBorder">
+                        <span>React • Next.js • Tailwind • Node</span>
+                    </div>
+
+                    <button onclick="openDoorCategory('web')" class="w-full mt-4 py-2 bg-blue-600/10 hover:bg-blue-600 text-blue-400 hover:text-white rounded-xl border border-blue-500/30 text-xs font-bold transition">
+                        Open Door →
+                    </button>
+                </div>
+
+                <!-- Door 2: App Development -->
+                <div class="door-card group relative bg-cardBg border border-cardBorder rounded-2xl p-6 text-center flex flex-col items-center justify-between min-h-[380px] overflow-hidden hover:border-purple-500/50 transition duration-300">
+                    <div class="w-full">
+                        <span class="text-xs font-mono text-purple-400 uppercase tracking-widest block mb-1">02 / CATEGORY</span>
+                        <h3 class="text-xl font-bold font-heading text-white">App Development</h3>
+                    </div>
+
+                    <div class="door-container relative w-36 h-52 my-6 cursor-pointer" onclick="openDoorCategory('app')">
+                        <div class="absolute inset-0 bg-purple-950/80 rounded-t-xl border border-purple-500/40 flex flex-col items-center justify-center p-3 text-center glow-purple">
+                            <i class="fa-solid fa-mobile-screen-button text-3xl text-purple-400 mb-2"></i>
+                            <span class="text-[11px] font-bold text-white uppercase tracking-wider">Explore Apps</span>
+                            <span class="text-[9px] text-purple-300 mt-1">iOS & Android</span>
+                        </div>
+                        <div class="door door-open-hover absolute inset-0 bg-gradient-to-br from-purple-600 to-purple-900 rounded-t-xl border-2 border-purple-400 shadow-xl flex flex-col justify-between p-3">
+                            <div class="border border-purple-400/30 h-full rounded-t-lg p-2 flex flex-col justify-between">
+                                <div class="w-full text-right">
+                                    <div class="w-3 h-3 rounded-full bg-yellow-400 ml-auto shadow-md"></div>
+                                </div>
+                                <span class="text-[10px] font-mono text-purple-200 tracking-tighter text-left">MOBILE APP</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full text-xs text-gray-400 bg-cardBorder/40 py-2 px-3 rounded-xl border border-cardBorder">
+                        <span>Flutter • React Native • iOS</span>
+                    </div>
+
+                    <button onclick="openDoorCategory('app')" class="w-full mt-4 py-2 bg-purple-600/10 hover:bg-purple-600 text-purple-400 hover:text-white rounded-xl border border-purple-500/30 text-xs font-bold transition">
+                        Open Door →
+                    </button>
+                </div>
+
+                <!-- Door 3: UI/UX Design -->
+                <div class="door-card group relative bg-cardBg border border-cardBorder rounded-2xl p-6 text-center flex flex-col items-center justify-between min-h-[380px] overflow-hidden hover:border-yellow-500/50 transition duration-300">
+                    <div class="w-full">
+                        <span class="text-xs font-mono text-yellow-400 uppercase tracking-widest block mb-1">03 / CATEGORY</span>
+                        <h3 class="text-xl font-bold font-heading text-white">UI/UX Design</h3>
+                    </div>
+
+                    <div class="door-container relative w-36 h-52 my-6 cursor-pointer" onclick="openDoorCategory('uiux')">
+                        <div class="absolute inset-0 bg-yellow-950/80 rounded-t-xl border border-yellow-500/40 flex flex-col items-center justify-center p-3 text-center glow-yellow">
+                            <i class="fa-solid fa-compass-drafting text-3xl text-yellow-400 mb-2"></i>
+                            <span class="text-[11px] font-bold text-white uppercase tracking-wider">Explore UI/UX</span>
+                            <span class="text-[9px] text-yellow-300 mt-1">Design Systems</span>
+                        </div>
+                        <div class="door door-open-hover absolute inset-0 bg-gradient-to-br from-amber-600 to-yellow-700 rounded-t-xl border-2 border-yellow-400 shadow-xl flex flex-col justify-between p-3">
+                            <div class="border border-yellow-400/30 h-full rounded-t-lg p-2 flex flex-col justify-between">
+                                <div class="w-full text-right">
+                                    <div class="w-3 h-3 rounded-full bg-white ml-auto shadow-md"></div>
+                                </div>
+                                <span class="text-[10px] font-mono text-yellow-100 tracking-tighter text-left">UI/UX STUDIO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full text-xs text-gray-400 bg-cardBorder/40 py-2 px-3 rounded-xl border border-cardBorder">
+                        <span>Figma • Wireframing • Research</span>
+                    </div>
+
+                    <button onclick="openDoorCategory('uiux')" class="w-full mt-4 py-2 bg-yellow-600/10 hover:bg-yellow-600 text-yellow-400 hover:text-white rounded-xl border border-yellow-500/30 text-xs font-bold transition">
+                        Open Door →
+                    </button>
+                </div>
+
+                <!-- Door 4: Graphic & Media -->
+                <div class="door-card group relative bg-cardBg border border-cardBorder rounded-2xl p-6 text-center flex flex-col items-center justify-between min-h-[380px] overflow-hidden hover:border-emerald-500/50 transition duration-300">
+                    <div class="w-full">
+                        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest block mb-1">04 / CATEGORY</span>
+                        <h3 class="text-xl font-bold font-heading text-white">Graphic & Media</h3>
+                    </div>
+
+                    <div class="door-container relative w-36 h-52 my-6 cursor-pointer" onclick="openDoorCategory('graphic')">
+                        <div class="absolute inset-0 bg-emerald-950/80 rounded-t-xl border border-emerald-500/40 flex flex-col items-center justify-center p-3 text-center glow-green">
+                            <i class="fa-solid fa-palette text-3xl text-emerald-400 mb-2"></i>
+                            <span class="text-[11px] font-bold text-white uppercase tracking-wider">Explore Media</span>
+                            <span class="text-[9px] text-emerald-300 mt-1">Branding & Visuals</span>
+                        </div>
+                        <div class="door door-open-hover absolute inset-0 bg-gradient-to-br from-emerald-600 to-teal-800 rounded-t-xl border-2 border-emerald-400 shadow-xl flex flex-col justify-between p-3">
+                            <div class="border border-emerald-400/30 h-full rounded-t-lg p-2 flex flex-col justify-between">
+                                <div class="w-full text-right">
+                                    <div class="w-3 h-3 rounded-full bg-yellow-400 ml-auto shadow-md"></div>
+                                </div>
+                                <span class="text-[10px] font-mono text-emerald-100 tracking-tighter text-left">GRAPHICS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full text-xs text-gray-400 bg-cardBorder/40 py-2 px-3 rounded-xl border border-cardBorder">
+                        <span>Photoshop • Illustrator • Branding</span>
+                    </div>
+
+                    <button onclick="openDoorCategory('graphic')" class="w-full mt-4 py-2 bg-emerald-600/10 hover:bg-emerald-600 text-emerald-400 hover:text-white rounded-xl border border-emerald-500/30 text-xs font-bold transition">
+                        Open Door →
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CATEGORY MODAL / PROJECT SHOWCASE -->
+        <div id="project-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl hidden overflow-y-auto">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 min-h-screen flex flex-col">
+                
+                <div class="flex items-center justify-between pb-8 border-b border-cardBorder">
+                    <button onclick="closeDoorModal()" class="px-5 py-2.5 rounded-full bg-cardBg border border-cardBorder text-gray-300 hover:text-white hover:bg-cardBorder transition flex items-center gap-2 text-sm">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Back to the doors</span>
+                    </button>
+
+                    <div class="text-right">
+                        <span id="modal-category-badge" class="text-xs font-mono text-blue-400 uppercase tracking-widest">SHOWCASE</span>
+                        <h2 id="modal-category-title" class="text-2xl sm:text-3xl font-extrabold font-heading text-white">Web Development</h2>
+                    </div>
+                </div>
+
+                <p id="modal-category-desc" class="text-gray-400 mt-6 max-w-2xl text-sm sm:text-base">
+                    Explore featured projects designed and built to deliver high performance, responsive layouts, and clean user experience.
+                </p>
+
+                <div id="modal-projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-10">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TIMELINE SECTION -->
+        <section id="timeline" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-cardBorder/40">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+                <div>
+                    <span class="text-xs font-mono text-blue-400 uppercase tracking-widest block mb-1">CAREER MILESTONES</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold font-heading text-white">Let's go back in time.</h2>
+                </div>
+                
+                <div class="flex space-x-2 bg-cardBg border border-cardBorder p-1.5 rounded-full">
+                    <button onclick="setTimelineYear('all')" class="timeline-year-btn active px-4 py-1.5 rounded-full text-xs font-bold transition bg-blue-600 text-white" data-year="all">All</button>
+                    <button onclick="setTimelineYear('2026')" class="timeline-year-btn px-4 py-1.5 rounded-full text-xs font-bold text-gray-400 hover:text-white transition" data-year="2026">2026</button>
+                    <button onclick="setTimelineYear('2024')" class="timeline-year-btn px-4 py-1.5 rounded-full text-xs font-bold text-gray-400 hover:text-white transition" data-year="2024">2024</button>
+                    <button onclick="setTimelineYear('2022')" class="timeline-year-btn px-4 py-1.5 rounded-full text-xs font-bold text-gray-400 hover:text-white transition" data-year="2022">2022</button>
+                </div>
+            </div>
+
+            <div class="space-y-8 relative before:absolute before:inset-0 before:left-4 md:before:left-1/2 before:-translate-x-px before:h-full before:w-0.5 before:bg-gradient-to-b before:from-blue-500 before:via-purple-500 before:to-transparent">
+                
+                <div class="timeline-item relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-year="2026">
+                    <div class="flex items-center justify-center w-9 h-9 rounded-full border-2 border-blue-500 bg-cardBg text-blue-400 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <i class="fa-solid fa-briefcase text-xs"></i>
+                    </div>
+                    <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] bg-cardBg border border-cardBorder p-6 rounded-2xl shadow-xl hover:border-blue-500/40 transition">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-mono text-blue-400 font-bold">2026 - PRESENT</span>
+                            <span class="bg-blue-500/10 text-blue-400 text-[10px] px-2.5 py-0.5 rounded-full border border-blue-500/20 font-semibold">Lead Developer</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading text-white mb-2">Senior Freelance & Product UI/UX</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Leading end-to-end web & mobile interface engineering for global clients, building scalable SaaS design systems and interactive web applications.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-year="2024">
+                    <div class="flex items-center justify-center w-9 h-9 rounded-full border-2 border-purple-500 bg-cardBg text-purple-400 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <i class="fa-solid fa-laptop-code text-xs"></i>
+                    </div>
+                    <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] bg-cardBg border border-cardBorder p-6 rounded-2xl shadow-xl hover:border-purple-500/40 transition">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-mono text-purple-400 font-bold">2024 - 2025</span>
+                            <span class="bg-purple-500/10 text-purple-400 text-[10px] px-2.5 py-0.5 rounded-full border border-purple-500/20 font-semibold">Design Lead</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading text-white mb-2">Graphic & UI/UX Designer</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Crafted visual brand identities, high-conversion landing pages, interactive prototypes, and cross-platform mobile UI for high-growth tech startups.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-year="2022">
+                    <div class="flex items-center justify-center w-9 h-9 rounded-full border-2 border-emerald-500 bg-cardBg text-emerald-400 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <i class="fa-solid fa-graduation-cap text-xs"></i>
+                    </div>
+                    <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] bg-cardBg border border-cardBorder p-6 rounded-2xl shadow-xl hover:border-emerald-500/40 transition">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-mono text-emerald-400 font-bold">2022 - 2024</span>
+                            <span class="bg-emerald-500/10 text-emerald-400 text-[10px] px-2.5 py-0.5 rounded-full border border-emerald-500/20 font-semibold">Graduation</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading text-white mb-2">B.Tech Computer Science</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Graduated with honors in Computer Science & Engineering. Specialized in web architectures, interface design principles, and modern software engineering.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT & FOOTER SECTION -->
+        <section id="contact" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-cardBorder/40">
+            <div class="bg-gradient-to-br from-cardBg via-[#161926] to-cardBg border border-cardBorder p-8 sm:p-14 rounded-3xl relative overflow-hidden">
+                <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="max-w-3xl relative z-10 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
+                        ● Available for new work
+                    </div>
+
+                    <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white leading-tight">
+                        Got a project?<br/> Let's build it together.
+                    </h2>
+
+                    <p class="text-gray-400 text-base sm:text-lg">
+                        I'm taking on new freelance work: websites, mobile apps, UI/UX interfaces, and branding. Tell me what you're building and I'll get back to you within 24 hours.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-4 pt-4">
+                        <a href="https://wa.me/03075857370" target="_blank" class="px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm transition-all shadow-lg flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Chat on WhatsApp</span>
+                        </a>
+
+                        <a href="tel:03075857370" class="px-7 py-4 rounded-full bg-cardBg border border-cardBorder text-white font-semibold text-sm hover:bg-cardBorder transition flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-xs text-gray-400"></i>
+                            <span>03075857370</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="mt-20 pt-10 border-t border-cardBorder/40 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+                <div class="space-y-3">
+                    <span class="text-lg font-bold font-heading text-white">AHMED<span class="text-blue-500">.</span></span>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Crafting intuitive digital experiences and high-impact web products.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-3 text-xs uppercase tracking-wider">Services</h4>
+                    <ul class="space-y-2 text-gray-400 text-xs">
+                        <li><a href="#doors" class="hover:text-white transition">Web Development</a></li>
+                        <li><a href="#doors" class="hover:text-white transition">App Development</a></li>
+                        <li><a href="#doors" class="hover:text-white transition">UI/UX Design</a></li>
+                        <li><a href="#doors" class="hover:text-white transition">Graphic Design</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-3 text-xs uppercase tracking-wider">Navigation</h4>
+                    <ul class="space-y-2 text-gray-400 text-xs">
+                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#doors" class="hover:text-white transition">Work & Projects</a></li>
+                        <li><a href="#timeline" class="hover:text-white transition">My Story</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-3 text-xs uppercase tracking-wider">Connect</h4>
+                    <div class="flex space-x-3 text-gray-400 mb-4">
+                        <a href="https://wa.me/03075857370" target="_blank" class="w-9 h-9 rounded-full bg-cardBg border border-cardBorder flex items-center justify-center hover:text-emerald-400 hover:border-emerald-500/50 transition">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-cardBg border border-cardBorder flex items-center justify-center hover:text-white hover:border-gray-500 transition">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-cardBg border border-cardBorder flex items-center justify-center hover:text-white hover:border-gray-500 transition">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-cardBg border border-cardBorder flex items-center justify-center hover:text-white hover:border-gray-500 transition">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <p class="text-[11px] text-gray-400">Direct Call: <a href="tel:03075857370" class="text-gray-300 underline font-mono">03075857370</a></p>
+                </div>
+            </footer>
+
+            <div class="mt-12 pt-6 border-t border-cardBorder/30 text-center text-xs text-gray-400">
+                <p>© <span id="current-year">2026</span> Ahmed Ali Raza. Designed & Built with precision.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/03075857370" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all transform hover:scale-110 border border-emerald-400/50 group" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out whitespace-nowrap text-xs font-bold pl-0 group-hover:pl-2">
+            Chat on WhatsApp
+        </span>
+    </a>
+
+    <!-- External Script File -->
+    <script src="script.js"></script>
+</body>
+</html>
